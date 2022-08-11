@@ -50,6 +50,7 @@ elif ! grep REACHC_ID "$CNF/env" > /dev/null 2>&1; then
   cp "$CNF/env" "$CNF/_backup/env-$(date -u '+%Y-%m-%dT%H:%M:%S.%NZ')"
   printf '\nexport REACHC_ID=%s\n' "$RCI" >> "$CNF/env"
 fi
+
 if [ -z "$REACH_ENV_PRS" ] && [ -f "$CNF/env" ]; then
   e="$(env |grep '^REACH')"
   # shellcheck disable=SC1090,SC1091
